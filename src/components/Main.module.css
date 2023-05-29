@@ -1,0 +1,184 @@
+#first {
+    position: relative;
+    height: 100vh;
+}
+
+#second {    
+    position: relative;
+    width: 73vw;
+    margin-left: auto;
+    margin-right: auto;
+    height: 100vh;
+}
+
+.title {
+    position:absolute; 
+    top:6%;
+    margin-top: 20vh;
+    vertical-align: middle;
+    width:100vmax;
+}
+
+.intro {
+    font-weight: 600;
+    font-size: 20px;
+}
+
+.intro :first-child {
+    text-decoration: underline;
+    text-underline-position: under;
+}
+
+.intro :nth-child(2) {
+    float: right;
+}
+
+.logo {
+    float: right;
+    margin-right: 100px;
+}
+
+.tContent {
+    margin-top: 80px;
+    font-size: 70px;
+    font-weight: 600;
+    line-height: 100px;
+}
+
+.tContent :nth-child(2n-1) {
+    margin-left: 210px;
+}
+
+.tContent :nth-child(2n) {
+    margin-left: 90px;
+}
+
+.tContent :nth-child(4) {
+    
+    font-family: 'Nanum Myeongjo';
+    font-weight: 800;
+}
+
+.tContent :nth-child(5) {
+    font-size: 16px;
+    line-height: 24px;
+    margin-left: 875px;
+    margin-top: 50px;
+}
+
+.arrow {
+    left:660px;
+    top:430px;
+    position: absolute;
+}
+
+.gContent {
+    margin-bottom: 300px;
+}
+
+.rContent {
+    height: 100vh;
+    position: relative;
+    font-size: 70px;
+    font-weight: 600;
+}
+
+.rContent > div{
+    z-index: 2;
+    position: absolute;
+}
+
+.rContent :first-child {
+    top: 200px;
+    font-size: 20px;
+    line-height: 30px;
+}
+
+.rContent :nth-child(2) {
+    top: 185px;
+    left: 230px;
+}
+
+.rContent :nth-child(2) > span{ 
+    font-size: 70px;
+}
+
+.rContent :nth-child(3){ 
+    top: 326px;
+}
+
+.rContent :nth-child(4){ 
+    top: 341px;
+    left: 850px;
+    font-size: 20px;
+    line-height: 30px;
+}
+
+.rContent :nth-child(5) {
+    top: 326px;
+    right: 0;
+}
+
+.rContent :nth-child(6) { 
+    width: 715px;
+    display: flex;
+    justify-content: space-between;
+    top: 462px;
+}
+
+.rContent :nth-child(6) :first-child { 
+    margin-top: 30px;
+    font-size: 70px;
+}
+
+.rContent :nth-child(7) {
+    top: 598px;
+}
+
+.rContent :nth-child(8) {
+    top: 603px;
+    left: 650px;
+}
+
+.rContent :nth-child(9) {
+    right: 0;
+    top: 598px;
+    color: #275C5E;
+}
+
+/* .gContent :first-child{
+    margin-top: 300px;
+    float: right;
+    font-weight: 600;
+} */
+
+#r1, #r2, #r3, #arrow2 {
+    position: absolute;
+    width: auto;
+}
+
+#r1 {
+    top: 250px;
+    left: 230px;
+}
+
+#r2 {
+    top:165px;
+    right: 227px;
+}
+
+#r3 {
+    top: 495px;
+    right: 360px;
+}
+
+.logo2 {
+    position: absolute;
+    top: 185px;
+    right: 0;
+}
+
+#arrow2 {
+    top: 700px;
+    right: 0;
+}
