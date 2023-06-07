@@ -5,7 +5,7 @@
 
 #second {    
     position: relative;
-    width: 73vw;
+    width: 1401.6px;
     margin-left: auto;
     margin-right: auto;
     height: 100vh;
@@ -57,6 +57,10 @@
     
     font-family: 'Nanum Myeongjo';
     font-weight: 800;
+}
+
+.hText:hover{
+    color: #076A41;
 }
 
 .tContent :nth-child(5) {
@@ -143,7 +147,11 @@
 .rContent :nth-child(9) {
     right: 0;
     top: 598px;
-    color: #275C5E;
+}
+
+#thesis {
+    color: #076A41;
+    font-size: 70px;
 }
 
 /* .gContent :first-child{

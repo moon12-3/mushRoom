@@ -1,0 +1,12 @@
+#first {
+    position: relative;
+    height: 100vh;
+}
+
+#second {    
+    position: relative;
+    width: 73vw;
+    margin-left: auto;
+    margin-right: auto;
+    height: 100vh;
+}

@@ -6,9 +6,11 @@ import arrow2 from "../img/arrow2.png"
 import rect from "../img/rect.png"
 import rect2 from "../img/rect2.png"
 import rect3 from "../img/rect3.png"
+import {Link} from "react-router-dom";
+import { useState } from "react";
 
 function Main() {
-
+    const [isListHover, setIsListHover] = useState(false);
     return (
         <>
             <div id={styles.first}>
@@ -23,7 +25,13 @@ function Main() {
                     <div>인간관계와 자연세계, 모든<img src={logo} className={styles.logo}/></div>
                     <div>측면의 상품 가치를 매기는 세계 속에서 </div>
                     <div>현재의 우리는 생존과 협동의 동학을</div>
-                    <div>어떻게 이해할 것인가?<img src={arrow} className={styles.arrow}/></div>
+                    <div 
+                        onMouseOver={() => setIsListHover(true)}
+                        onMouseOut={() => setIsListHover(false)}
+                        className={styles.hText}>
+                        어떻게 이해할 것인가?
+                        <img src={isListHover ? arrow2 : arrow} className={styles.arrow}/>
+                    </div>
                     <div>급변하는 현대사회에서는 한 가지 가치만을 바라<br/>
                         보고는 오래가지 못한다. 흔히들 ‘선택과 집중’의<br/>
                         시대라고 한다. 선택과 집중의 진정한 문제는 급변하는<br/>
@@ -56,8 +64,8 @@ function Main() {
                     </div>
                     <div className="nanum">모든 이야기의 기록</div>
                     <div><span>논제확인하러가기</span></div>
-                    <div>클릭해서 자세히</div>
-                    <img src={arrow2} id={styles.arrow2}/>
+                    <div id={styles.thesis}><Link to='/thesis' id={styles.thesis}>클릭해서 자세히</Link></div>
+                    <Link to='/thesis'><img src={arrow2} id={styles.arrow2}/></Link>
                     <img src={rect} id={styles.r1}/>
                     <img src={rect2} id={styles.r2}/>
                     <img src={rect3} id={styles.r3}/>
