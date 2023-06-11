@@ -59,6 +59,10 @@
     font-weight: 800;
 }
 
+.hText {
+    display: flex;
+}
+
 .hText:hover{
     color: #076A41;
 }

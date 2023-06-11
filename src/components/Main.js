@@ -1,4 +1,5 @@
 import title from "../img/title.png";
+import '../App.css'
 import styles from "./Main.module.css"
 import logo from "../img/logo2.png"
 import arrow from "../img/arrow.png"
@@ -25,13 +26,14 @@ function Main() {
                     <div>인간관계와 자연세계, 모든<img src={logo} className={styles.logo}/></div>
                     <div>측면의 상품 가치를 매기는 세계 속에서 </div>
                     <div>현재의 우리는 생존과 협동의 동학을</div>
-                    <div 
+                    <Link
+                        to = '/accodion' 
                         onMouseOver={() => setIsListHover(true)}
                         onMouseOut={() => setIsListHover(false)}
                         className={styles.hText}>
                         어떻게 이해할 것인가?
                         <img src={isListHover ? arrow2 : arrow} className={styles.arrow}/>
-                    </div>
+                    </Link>
                     <div>급변하는 현대사회에서는 한 가지 가치만을 바라<br/>
                         보고는 오래가지 못한다. 흔히들 ‘선택과 집중’의<br/>
                         시대라고 한다. 선택과 집중의 진정한 문제는 급변하는<br/>

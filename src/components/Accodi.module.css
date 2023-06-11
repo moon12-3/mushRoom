@@ -1,0 +1,197 @@
+#first {
+    display: flex;
+    position: relative;
+    width: 1416px;
+    margin-top: 85px;
+    margin-bottom: 133px;
+    margin-left: auto;
+    margin-right: auto;
+    font-family: 'Gothic A1', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 28px;
+}
+
+#second {    
+    position: relative;
+    width: 1416px;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 28px;
+}
+
+#title {
+    line-height: 35px;
+}
+
+#first :nth-child(2) {
+    margin-left: 305px;
+}
+
+.bodyAnswer {
+    position: relative;
+    padding-top: 1rem;
+    padding-bottom: 1.5rem;
+    border-top-width: 1px;
+    opacity: 1;
+    transition: all 0.5s, padding-bottom 0.5s, height 0.5s, transform 0.5s;
+  }
+  
+.bodyNone {
+    padding-top: 0rem;
+    padding-bottom: 0rem;
+    height: 86px;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.2s, padding-bottom 0.5s, height 0.5s, transform 0.5s;
+}
+
+.bTextNone {
+    opacity: 0;
+    transition: all 0.2s, padding-bottom 0.5s, height 0.5s, transform 0.5s;
+}
+
+.bodyDisplay {
+    display: none;
+}
+
+.hText {
+    display: flex;
+    justify-content: space-between;
+    font-family: 'Gothic A1', sans-serif;
+    font-weight: 500;
+}
+
+#a1Container {
+    float: right;
+    margin-bottom: 46px;
+}
+
+#a1Title {
+    margin-top: 42px;
+    font-size: 70px;
+    float:right;
+    font-family: 'Gothic A1', sans-serif;
+    font-weight: 500;
+    margin-bottom: 46px;
+}
+
+#a1Title :first-child{
+    text-align: right;
+}
+
+#a1Title :nth-child(2) {
+    text-align: left;
+}
+
+.aText {
+    font-family: 'Gothic A1', sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    text-align-last : justify;
+    color: rgba(0, 0, 0, 0.72);
+    margin-bottom: 20px;
+    line-height: 160%;
+    letter-spacing: -0.02em;
+    font-weight: 500;
+}
+
+.aText :first-child {
+    color: black;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+#aText1 {
+    width: 503px;
+}
+
+.aleft {
+    text-align-last : left;
+    letter-spacing: -0.01em;
+}
+
+#aText2 {
+    width: 480px;
+    margin-left: 520px;
+}
+
+#aText3 {
+    width: 480px;
+    float: right;
+    margin-right: 220px;
+}
+
+#aText4 {
+    width: 480px;
+}
+
+#aText5 {
+    margin-left: 457px;
+    margin-top: 20px;
+    margin-bottom: 30px;
+    width: 480px;
+}
+
+.img2 {
+    margin-left: 18px;
+}
+
+#img3 {
+    margin-top: 23px;
+    margin-left: 520px;
+    margin-bottom: 46px;
+}
+
+#a2Title {
+    margin-top: 102px;
+    position: relative;
+    color: rgba(0, 0, 0, 0.72);
+    float: right;
+    width: 1105px;
+    letter-spacing: -0.05em;
+    font-family: 'Gothic A1', sans-serif;
+    font-weight: 500;
+    font-size: 50px;
+    line-height: 80px;
+    text-align-last: justify;
+    z-index: 2;
+}
+
+#a2Title :first-child {
+    text-align-last: left;
+}
+
+#a2sub {
+    text-align-last: right;
+}
+
+.a2Img {
+    float: right;
+    width: auto;
+    margin-top: -165px;
+    z-index: 1;
+    margin-bottom: 32px;
+}
+
+.ac2First {
+    float: left;
+}
+
+.mush {
+    margin-top: 34px;
+    width: 1420px;
+    display: flex;
+    justify-content: space-between;
+}
+
+#a2Title2 {
+    display: flex;
+    position: relative;
+    color: rgba(0, 0, 0, 0.72);
+    font-family: 'Gothic A1', sans-serif;
+    font-weight: 500;
+    font-size: 50px;
+    line-height: 80px;
+}
+

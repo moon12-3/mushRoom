@@ -1,12 +1,13 @@
 #first {
-    position: relative;
+    font-size: 70px;
+    text-align: center;
+    width:989px;
     height: 100vh;
-}
-
-#second {    
-    position: relative;
-    width: 73vw;
     margin-left: auto;
     margin-right: auto;
-    height: 100vh;
+}
+
+#first :first-child {
+    margin-top: 122px;
+
 }
