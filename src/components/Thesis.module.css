@@ -1,13 +1,193 @@
 #first {
+    margin-top: 122px;
     font-size: 70px;
     text-align: center;
     width:989px;
-    height: 100vh;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 100px;
+}
+
+#fText {
+    position: relative;
+    font-family: 'Gothic A1', sans-serif;
+    font-weight: 500;
+}
+
+#bArrow {
+    left:176px;    
+    margin-top : 12px;
+    position:absolute;
+}
+
+#second {
+    width :315px;
+    text-align : center;
+    margin-top : 418px;
     margin-left: auto;
     margin-right: auto;
 }
 
-#first :first-child {
-    margin-top: 122px;
+#second :nth-child(2) {
+    margin-top : 28.12px;
+    font-family: 'Gothic A1', sans-serif;
+    font-weight: 600;
+    font-size : 40px;
+}
 
+#third {
+    width: 1416px;
+    position: relative;
+    margin-top : 146px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#third > div {
+    position: absolute;
+}
+
+#water {
+    left:126px;
+}
+
+#water > img {
+    position: absolute;
+    left : 50px;
+}
+
+.wimg {
+    top : 115px;
+}
+
+.theText {
+    position:relative;
+    font-family: 'Gothic A1', sans-serif;
+    font-weight: 500;
+    font-size : 16px;
+    letter-spacing: 0.03em;
+    z-index: 3;
+    line-height: 150%;
+}
+
+.theText :first-child{
+    font-family: 'Gothic A1', sans-serif;
+    font-weight: 700;
+    font-size : 38px;
+    margin-bottom : 15px;
+}
+
+#theText {
+    margin-top : 275px;
+}
+
+#theText2 {
+    margin-left : 40px;
+}
+
+#theText3 {
+    margin-top : 60px;
+    margin-left : 40px;
+}
+
+#theText4 {
+    margin-top : 290px;
+}
+
+#theText5 {
+    margin-top : 150px;
+    margin-right : 15px;    
+}
+
+#theText6 {
+    margin-top : 40px;
+}
+
+#zoo {
+    top:60px;
+    left : 499px;
+}
+
+#zoo > img {
+    margin-top : 20px;
+    margin-bottom : 10px;
+}
+
+.arrBtn {
+    position:absolute;
+}
+
+#arrBtn {
+    left : 35px;
+    top:130px;
+}
+
+#arrBtn2 {
+    left : 70px;
+    top:0;
+}
+
+#arrBtn3 {
+    left : 30px;
+    top:350px;
+}
+
+#arrBtn4 {
+    left : 45px;
+    top:125px;
+}
+
+#arrBtn5 {
+    left : 205px;
+    top:230px;
+}
+
+#arrBtn6 {
+    left : 250px;
+    top:175px;
+}
+
+#arrBtn7 {
+    left : 30px;
+    top:170px;
+}
+
+#traffic {
+    top : -10px;
+    left : 983px;
+}
+
+#world {
+    display : flex;
+    top : 460px;
+    left : 548px;
+}
+
+#free {
+    display : flex;
+    top : 445px;
+    left : 0;
+}
+
+#free > img {
+    margin-left:-20px;
+}
+
+#vegetable {
+    display : flex;
+    top : 775px;
+    left : 530px;
+}
+
+#vegetable > img {
+    margin-bottom : 134px;
+}
+
+#community {
+    left: 1132px;
+    top : 650px;
+}
+
+#community > img {
+    margin-left : 15px;
 }
