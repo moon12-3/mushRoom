@@ -5,11 +5,13 @@ import Record from './components/Record'
 import Thesis from './components/Thesis'
 import Accodi from './components/Accodi';
 import { BrowserRouter, Route, Routes} from 'react-router-dom'
+import ScrollToTop from './components/ScrollToTop';
 
 function App() {
   return (
     <BrowserRouter>
       <Header/>
+      <ScrollToTop/>
       <Routes>
           <Route path="/" element={<Main />} />
           <Route path="/record" element={<Record/>}/>
