@@ -1,5 +1,5 @@
 * {
-  /* outline: solid 1px red;   */
+  /*outline: solid 1px red;  */
 }
 
 html {
@@ -91,3 +91,30 @@ a:visited {
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Gothic+A1:wght@500&family=Nanum+Myeongjo&display=swap');
+
+footer {
+  width: 100vw;
+  height: 332px;
+  background-color: #f4f4f4;
+}
+
+#footer {
+  display: flex;
+  justify-content: space-between;
+  width: 815px;
+  padding-top: 99px;
+  margin-left: 252px;
+  line-height: 40px;
+  font-size: 16px;
+}
+
+#footer :first-child {
+
+}
+
+#card {
+  margin: 30px;
+  width: 200px;
+  height: 332px;
+  background-color: rgb(179, 179, 179);
+}

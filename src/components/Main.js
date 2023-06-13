@@ -13,7 +13,7 @@ import { useState } from "react";
 function Main() {
     const [isListHover, setIsListHover] = useState(false);
     return (
-        <>
+        <div id={styles.top}>
             <div id={styles.first}>
                 <img src={title} className={styles.title}/>
             </div>
@@ -74,7 +74,7 @@ function Main() {
                     <img src={logo} className={styles.logo2}/>
                 </div>
             </div>
-        </>
+        </div>
     )
 }
 
