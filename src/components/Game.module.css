@@ -1,0 +1,74 @@
+#container {
+    margin-top: -93.06px;
+    background-size: cover;
+    height: 100vh;
+    background-image: url('./img//gameBg.png');
+}
+
+#first {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 686px;
+    height: 781.24px;
+    padding-top: 173px;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+}
+
+#gTitle {
+    position: relative;
+    height: 520px;
+    font-size: 70px;
+    color: white;
+    /* line-height: 150%; */
+    text-align: center;
+}
+
+.up {
+    width: 100%;
+    top : 140px;
+    text-align: center;
+}
+
+#middle {
+    width: 100%;
+    font-size: 19px;
+    top : 95px;
+    line-height: 150%;
+    font-family: 'GothicA1-Light';
+    opacity: 0;
+}
+
+.down {
+    width: 100%;
+    bottom : 140px;
+}
+
+#gTitle div {
+    position: absolute;
+    transition: all 0.3s;
+}
+
+#gTitle:hover .up{
+    top : -20px;
+}
+
+#gTitle:hover .down{
+    bottom : -20px;
+}
+
+#gTitle:hover #middle {
+    opacity: 1;
+    transition: all 0.5s;
+}
+
+#gTitle a {
+    color: white;
+    text-decoration-line: none;
+}
+
+.upArr {
+    transform: rotate( 180deg );
+}

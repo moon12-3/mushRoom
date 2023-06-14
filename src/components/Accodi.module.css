@@ -20,6 +20,10 @@
     font-size: 28px;
 }
 
+.abox {
+    height: auto;
+}
+
 #title {
     line-height: 35px;
 }

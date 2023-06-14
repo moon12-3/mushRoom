@@ -1,5 +1,5 @@
 * {
-  /*outline: solid 1px red;  */
+  /* outline: solid 1px red;  */
 }
 
 html {
@@ -23,6 +23,23 @@ body::-webkit-scrollbar {
 }
 
 .nav {
+  color: white;
+  position: relative;
+  z-index: 100;
+  background-color: transparent;
+  display: flex;
+  justify-content: space-between;
+  list-style-type: none;
+  width: 100vw;
+  padding-top: 3vh;
+  margin-top: -10px;
+  font-weight: 600;
+  padding-bottom: 15px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.nav-bg {
   background-color: white;
   display: flex;
   justify-content: space-between;
@@ -51,15 +68,18 @@ body::-webkit-scrollbar {
 } 
 
 .nav-list > li {
-  color: black;
   padding-left: 85px;
   padding-right: 85px;
   text-decoration-line: none;
 }
 
-a {
+.nav a {
   text-decoration-line: none;
-  text-decoration-color: black;
+  color: white;
+}
+
+.nav-bg a {
+  text-decoration-line: none;
   color: black;
 }
 
@@ -106,10 +126,17 @@ footer {
   margin-left: 252px;
   line-height: 40px;
   font-size: 16px;
+  font-family: 'Gothic A1', sans-serif;
+  font-style: normal;
+  font-weight: 400;
 }
 
-#footer :first-child {
+#none {
+  display: none;
+}
 
+#footer :nth-child(2) {
+  color: #076A41;
 }
 
 #card {

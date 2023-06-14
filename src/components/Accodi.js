@@ -40,7 +40,7 @@ function AccordionEx(props) {
     let [tab2, setTab2] = useState(`${styles.bTextNone} ${styles.bodyDisplay}`);
 
     return (
-      <>
+      <div className={styles.abox}>
         <div className={styles.aHeader} onClick={()=> {
             if(tab==='') {
                 setTab(`${styles.bodyNone}`);
@@ -69,7 +69,7 @@ function AccordionEx(props) {
                 }
                 </div>
           </div>
-      </>
+      </div>
     );
 }
 
