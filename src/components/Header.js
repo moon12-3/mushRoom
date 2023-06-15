@@ -1,5 +1,6 @@
 import {Link, useLocation} from "react-router-dom";
 import logo from "../img/logo.png";
+import logo2 from "../img/logo2.png";
 import { useEffect, useState } from "react";
 
 function Header() {
@@ -18,12 +19,16 @@ function Header() {
     return (
         <header>
             <div className={showBackground ? 'nav-bg' : 'nav'}>
-                <ul className="nav-list">
-                    <li><Link to='/'>소개</Link></li>
-                    <li><Link to='/game'>게임</Link></li>
-                    <li><Link to='/record'>기록</Link></li>
-                    <li><img className = "logo" src={logo}/></li>
-                </ul>
+                <div className='in-nav'>
+                    <div>
+                    <img className = "logo" src={showBackground ? logo : logo2}/>
+                    </div>
+                    <ul className="nav-list">
+                        <li><Link to='/'>소개</Link></li>
+                        <li><Link to='/game'>게임</Link></li>
+                        <li><Link to='/record'>기록</Link></li>
+                    </ul>
+                </div>
             </div>
         </header>
     )

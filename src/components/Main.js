@@ -1,7 +1,8 @@
 import title from "../img/title.png";
 import '../App.css'
 import styles from "./Main.module.css"
-import logo from "../img/logo2.png"
+import logo from "../img/logo.png"
+import logo2 from "../img/logo2.png"
 import arrow from "../img/arrow.png"
 import arrow2 from "../img/arrow2.png"
 import rect from "../img/rect.png"
@@ -71,7 +72,7 @@ function Main() {
                     <img src={rect} id={styles.r1}/>
                     <img src={rect2} id={styles.r2}/>
                     <img src={rect3} id={styles.r3}/>
-                    <img src={logo} className={styles.logo2}/>
+                    <img src={logo2} className={styles.logo2}/>
                 </div>
             </div>
         </div>

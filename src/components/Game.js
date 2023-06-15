@@ -2,13 +2,29 @@ import { useState } from 'react'
 import styles from './Game.module.css'
 import wArrow from './img/wArrow.png'
 import {Link} from 'react-router-dom'
+import card from './card/zoo.png'
+import logo from '../img/logo2.png'
+import $ from 'jquery';
 
 function Game() {
     let [next, setNext] = useState(true);
+    let [fadeState, setFadeState] = useState('fade-in');
+
+    const playClick = () => {
+        setFadeState('fade-out');
+        setTimeout(() => {
+          setNext(!next);
+          setFadeState('fade-in');
+        }, 500); 
+    }
           
     return (
         <div id={styles.container}>
-           {next?<First setNext={setNext}/>:<Second/>}
+            <div className={styles.content}>
+                {next?
+                <First click={playClick} fadeState={fadeState}/>
+                :<Second fadeState={fadeState}/>}
+           </div>
         </div>
     )
 }
@@ -17,7 +33,7 @@ export default Game;
 
 function First(props) {
     return (
-        <div id={styles.first}>
+        <div id={styles.first} className={props.fadeState}>
             <center><img src={wArrow}/></center>
             <div className='nanum' id={styles.gTitle}>
                 <div className={styles.up}>
@@ -40,7 +56,7 @@ function First(props) {
                     4. 카드의 뒷면에는 더 많은 정보가 있습니다.<br/>
                     카드를 뒤집어(click) 항상 양면을 살피세요.<br/>
                 </div>
-                <div className={styles.down} onClick={()=>props.setNext(false)}>
+                <div className={styles.down} onClick={props.click}>
                     게임 시작하기
                 </div>
             </div>
@@ -49,10 +65,45 @@ function First(props) {
     )
 }
 
-function Second() {
+function Second(props) {
+        const box = document.querySelector('.card1');
+        const box2 = document.querySelector('.card2');
+
+        const goLeft = () => {
+            $(".card1").css('left', '-1000px');
+        }
+
+        const goRight = () => {
+            $(".card2").css('right', '-325px');
+        }
+
+        // $(".card1").on('click',function(){
+        //     console.log("야");
+        //     $(".cardRotate").addClass("backRotate").removeClass("cardRotate");
+        //     $(".card1").addClass("cardRotate").removeClass("backRotate");
+        // });
+
+        // $(".card2").on('click',function(){
+        //     $(".cardRotate").addClass("backRotate").removeClass("cardRotate");
+        //     $(this).addClass("cardRotate").removeClass("backRotate");
+        // });
+
     return(
-        <>
-            야호
-        </>
+        <center><div id={styles.second} className={props.fadeState}>
+            <img src={wArrow} className={styles.leftArr} onClick={goLeft}/>
+            <div className='card card1'>
+                <img src={card} className='front'/>
+                <img src={card} className='back'/>
+            </div>
+            <div>
+                <img src={logo}/>
+                <p id={styles.wText}>보류하기</p>
+            </div>
+            <div className='card card2'>
+                <img src={card} className='front'/>
+                <img src={card} className='back'/>
+            </div>
+            <img src={wArrow} className={styles.rightArr} onClick={goRight}/>
+        </div></center>
     )
 }

@@ -23,35 +23,40 @@ body::-webkit-scrollbar {
 }
 
 .nav {
+  font-size: 16px;
   color: white;
-  position: relative;
-  z-index: 100;
-  background-color: transparent;
-  display: flex;
-  justify-content: space-between;
   list-style-type: none;
   width: 100vw;
-  padding-top: 3vh;
   margin-top: -10px;
   font-weight: 600;
-  padding-bottom: 15px;
+  line-height: 70px;
+  height: 91px;
+}
+
+.nav-bg {
+  font-size: 16px;
+  background-color: white;
+  list-style-type: none;
+  width: 100vw;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
+  margin-top: -10px;
+  font-weight: 600;
+  line-height: 70px;
+  height: 91px;
+}
+
+.in-nav {
+  padding-top: -20px;
+  width : 1416px;
+  display: flex;
+  justify-content: space-between;
   margin-left: auto;
   margin-right: auto;
 }
 
-.nav-bg {
-  background-color: white;
-  display: flex;
-  justify-content: space-between;
-  list-style-type: none;
-  width: 100vw;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
-  padding-top: 3vh;
-  margin-top: -10px;
-  font-weight: 600;
-  padding-bottom: 15px;
-  margin-left: auto;
-  margin-right: auto;
+.logo {
+  padding-top: 35px;
+  width: 32px;
 }
 
 .fade-out {
@@ -63,13 +68,12 @@ body::-webkit-scrollbar {
   list-style-type: none;
   display: flex;
   text-align: center;
-  margin-right: 10vw;
   margin-left: auto;
 } 
 
 .nav-list > li {
-  padding-left: 85px;
-  padding-right: 85px;
+  padding-left: 170px;
+  /* padding-right: 85px; */
   text-decoration-line: none;
 }
 
@@ -139,9 +143,72 @@ footer {
   color: #076A41;
 }
 
-#card {
-  margin: 30px;
-  width: 200px;
-  height: 332px;
-  background-color: rgb(179, 179, 179);
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+    visibility: hidden;
+  }
 }
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.fade-in {
+  animation: fadeIn 0.5s;
+  opacity: 1;
+  visibility: visible;
+}
+
+.fade-out {
+  animation: fadeOut 0.5s;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.card:hover {
+  cursor: grab;
+}
+
+.card {
+  position: absolute;
+  top:130px;
+}
+
+.card1 {
+  left: 85px;
+  transition: all 0.5s;
+}
+
+.card2 {
+  right: 590px;
+  transition: all 0.5s;
+}
+
+.back {
+  transform:rotateY(90deg);
+  position:absolute;
+  top:0; left:0;
+}
+
+.front {
+  position:absolute;
+  top:0; left:0;
+}
+
+.cardRotate .front{opacity:1;animation: rotateAni 0.3s 1; transform:rotateY(90deg);}
+.cardRotate .back{opacity:1;animation: rotateAni2 0.3s 0.3s 1 backwards; transform:rotateY(0);}
+.backRotate .front{animation: backAni 0.3s   1; opacity:1;}
+.backRotate .back{opacity:0;}
+

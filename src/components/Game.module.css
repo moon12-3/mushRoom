@@ -1,20 +1,29 @@
 #container {
-    margin-top: -93.06px;
+    margin-top: -81px;
     background-size: cover;
     height: 100vh;
+    width: 100vw;
     background-image: url('./img//gameBg.png');
 }
 
+.content {
+    width: 100vw;
+    text-align: center;
+    margin-top: 173px;
+    position: absolute;
+}
+
 #first {
+    position: relative;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     width: 686px;
     height: 781.24px;
-    padding-top: 173px;
+    left: auto;
+    right: auto;
     margin-left: auto;
     margin-right: auto;
-    position: relative;
 }
 
 #gTitle {
@@ -46,6 +55,10 @@
     bottom : 140px;
 }
 
+.down:hover {
+    cursor: grab;
+}
+
 #gTitle div {
     position: absolute;
     transition: all 0.3s;
@@ -71,4 +84,29 @@
 
 .upArr {
     transform: rotate( 180deg );
+}
+
+.leftArr {
+    transform: rotate( 90deg );
+}
+
+.rightArr {
+    transform: rotate( 270deg );
+}
+
+#second {
+    margin-top: 30px;
+    padding-top: 400px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 1410px;
+}
+
+#wText {
+    font-size: 22px;
+    color: white;
+    font-family: 'Gothic A1', sans-serif;
+    font-weight: 500;
 }
