@@ -3,6 +3,7 @@ import styles from './Game.module.css'
 import wArrow from './img/wArrow.png'
 import {Link} from 'react-router-dom'
 import card from './card/zoo.png'
+import card2 from './card/back.png'
 import logo from '../img/logo2.png'
 import $ from 'jquery';
 
@@ -66,42 +67,35 @@ function First(props) {
 }
 
 function Second(props) {
-        const box = document.querySelector('.card1');
-        const box2 = document.querySelector('.card2');
+    let [rot, setRot] = useState(true);
+    let [rot2, setRot2] = useState(true);
 
         const goLeft = () => {
             $(".card1").css('left', '-1000px');
         }
 
         const goRight = () => {
-            $(".card2").css('right', '-325px');
+            $(".card2").css('right', '-1000px');
         }
-
-        // $(".card1").on('click',function(){
-        //     console.log("야");
-        //     $(".cardRotate").addClass("backRotate").removeClass("cardRotate");
-        //     $(".card1").addClass("cardRotate").removeClass("backRotate");
-        // });
-
-        // $(".card2").on('click',function(){
-        //     $(".cardRotate").addClass("backRotate").removeClass("cardRotate");
-        //     $(this).addClass("cardRotate").removeClass("backRotate");
-        // });
 
     return(
         <center><div id={styles.second} className={props.fadeState}>
             <img src={wArrow} className={styles.leftArr} onClick={goLeft}/>
-            <div className='card card1'>
+            <div className = {'container card1'}>
+                <div className = {`card ${rot?'rot2':'rot'}`} onClick={()=>setRot(!rot)}>
                 <img src={card} className='front'/>
-                <img src={card} className='back'/>
+                <img src={card2} className='back'/>
+                </div>
             </div>
             <div>
                 <img src={logo}/>
                 <p id={styles.wText}>보류하기</p>
             </div>
-            <div className='card card2'>
+            <div className = {'container card2'}>
+                <div className = {`card ${rot2?'rot2':'rot'}`} onClick={()=>setRot2(!rot2)}>
                 <img src={card} className='front'/>
-                <img src={card} className='back'/>
+                <img src={card2} className='back'/>
+                </div>
             </div>
             <img src={wArrow} className={styles.rightArr} onClick={goRight}/>
         </div></center>

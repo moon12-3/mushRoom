@@ -181,34 +181,63 @@ footer {
   cursor: grab;
 }
 
-.card {
-  position: absolute;
-  top:130px;
+.card > img {
+  position:absolute;
 }
 
 .card1 {
-  left: 85px;
+  position:absolute;
+  left: 100px;
+  top: 0;
   transition: all 0.5s;
 }
 
 .card2 {
-  right: 590px;
+  position:absolute;
+  right: 100px;
+  top: 0;
   transition: all 0.5s;
 }
 
+.container div {
+  width: 100%;
+  height: 100%;
+}
+
+.container {
+  position: absolute;
+  width: 504px;
+  perspective: 1000px;
+}
+
+.card {
+
+  position: absolute;
+  left: 0;
+  transition: transform 1s;
+  transform-style: preserve-3d;
+  cursor: pointer;
+}
+
+.front, .back {
+  top: 0;
+  left: 0;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  backface-visibility: hidden;
+}
+
 .back {
-  transform:rotateY(90deg);
-  position:absolute;
-  top:0; left:0;
+  transform: rotateY(180deg);
 }
 
-.front {
-  position:absolute;
-  top:0; left:0;
+.rot {
+  transform: rotateY(180deg);
 }
 
-.cardRotate .front{opacity:1;animation: rotateAni 0.3s 1; transform:rotateY(90deg);}
-.cardRotate .back{opacity:1;animation: rotateAni2 0.3s 0.3s 1 backwards; transform:rotateY(0);}
-.backRotate .front{animation: backAni 0.3s   1; opacity:1;}
-.backRotate .back{opacity:0;}
+.rot2 {
+  transform: rotateY(0deg);
+}
 

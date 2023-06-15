@@ -56,7 +56,8 @@
 }
 
 .down:hover {
-    cursor: grab;
+    color: #076A41;
+    cursor: pointer;
 }
 
 #gTitle div {
@@ -96,7 +97,7 @@
 
 #second {
     margin-top: 30px;
-    padding-top: 400px;
+    padding-top: 300px;
     position: relative;
     display: flex;
     align-items: center;
