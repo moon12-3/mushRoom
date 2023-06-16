@@ -219,10 +219,10 @@ footer {
   cursor: pointer;
 }
 
-.front, .back {
+.front, .back, .sm, .big {
+  position: absolute;
   top: 0;
   left: 0;
-  position: absolute;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -237,7 +237,29 @@ footer {
   transform: rotateY(180deg);
 }
 
-.rot2 {
-  transform: rotateY(0deg);
+.sm, .big {
+  
+  transition: all 1s;
 }
 
+.sm {
+  opacity: 0;
+  transform: scale(0.1);
+}
+
+.big {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.l {
+  left: 100px;
+}
+
+.r {
+  left: 805px;
+}
+
+.card img {
+  transition: all 0.5s;
+}

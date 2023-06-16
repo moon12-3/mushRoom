@@ -69,20 +69,26 @@ function First(props) {
 function Second(props) {
     let [rot, setRot] = useState(true);
     let [rot2, setRot2] = useState(true);
+    let [size, setSize] = useState(true);
+    let [cnt, setCnt] = useState(0);
 
         const goLeft = () => {
             $(".card1").css('left', '-1000px');
+            setSize(false);
         }
 
         const goRight = () => {
             $(".card2").css('right', '-1000px');
+            setSize(false);
         }
 
     return(
         <center><div id={styles.second} className={props.fadeState}>
             <img src={wArrow} className={styles.leftArr} onClick={goLeft}/>
+            <img src={card} className={`l ${size?'sm':'big'}`}/>
+            <img src={card} className={`r ${size?'sm':'big'}`}/>
             <div className = {'container card1'}>
-                <div className = {`card ${rot?'rot2':'rot'}`} onClick={()=>setRot(!rot)}>
+                <div className = {`card ${rot?'':'rot'}`} onClick={()=>setRot(!rot)}>
                 <img src={card} className='front'/>
                 <img src={card2} className='back'/>
                 </div>
@@ -92,7 +98,7 @@ function Second(props) {
                 <p id={styles.wText}>보류하기</p>
             </div>
             <div className = {'container card2'}>
-                <div className = {`card ${rot2?'rot2':'rot'}`} onClick={()=>setRot2(!rot2)}>
+                <div className = {`card ${rot2?'':'rot'}`} onClick={()=>setRot2(!rot2)}>
                 <img src={card} className='front'/>
                 <img src={card2} className='back'/>
                 </div>
