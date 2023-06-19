@@ -28,7 +28,7 @@ function Footer() {
                     m. d2135@e-mirim.hs.kr
                 </div>
                 <div>
-                    Design. CY Moon<br/>
+                    Develope. CY Moon<br/>
                     t.010 9749 7111<br/>
                     m. mooncy05@gmail.com
                 </div>

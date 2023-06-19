@@ -2,8 +2,7 @@ import { useState } from 'react'
 import styles from './Game.module.css'
 import wArrow from './img/wArrow.png'
 import {Link} from 'react-router-dom'
-import card from './card/zoo.png'
-import card2 from './card/back.png'
+import card from './card/left/1.png'
 import logo from '../img/logo2.png'
 import $ from 'jquery';
 
@@ -69,38 +68,89 @@ function First(props) {
 function Second(props) {
     let [rot, setRot] = useState(true);
     let [rot2, setRot2] = useState(true);
-    let [size, setSize] = useState(true);
-    let [cnt, setCnt] = useState(0);
+    let [size1, setSize1] = useState(true);
+    let [size2, setSize2] = useState(true);
+    let [cnt, setCnt] = useState(1);
+    let [notStop, setStop] = useState(true);
 
         const goLeft = () => {
-            $(".card1").css('left', '-1000px');
-            setSize(false);
+            if(notStop) {
+                setStop(false);
+                $(".card1").css('left', '-1000px');
+                $(".card1").css('transition', 'all 0.5s');
+                opaRight();
+                setSize1(false);
+                setRot(true);
+                setTimeout(()=>{
+                    setStop(true);
+                    setSize1(true);
+                    $(".card1").css('transition', 'all 0s');
+                    $(".card1").css('left', '100px');
+                }, 900);
+            }
+        }
+
+        const opaRight = () => {
+            $(".card2").css('transition', 'all 0.5s');
+            $('.card2').css('opacity', '0');
+            setRot2(true);
+            setTimeout(()=> {
+                $('.card2').css('opacity', '1');
+            }, 900);
         }
 
         const goRight = () => {
-            $(".card2").css('right', '-1000px');
-            setSize(false);
+            if(notStop) {
+                setStop(false);
+                $(".card2").css('right', '-1000px');
+                $(".card2").css('transition', 'all 0.5s');
+                opaLeft();
+                setSize2(false);
+                setRot2(true);
+                setTimeout(()=>{
+                    setStop(true);
+                    setSize2(true);
+                    $(".card2").css('transition', 'all 0s');
+                    $(".card2").css('right', '100px');
+                }, 900);
+            }
+        }
+
+        const opaLeft = () => {
+            $(".card1").css('transition', 'all 0.5s');
+            $('.card1').css('opacity', '0');
+            setRot(true);
+            setTimeout(()=> {
+                $('.card1').css('opacity', '1');
+            }, 900);
+        }
+
+        const hold = () => {
+            if(notStop) {
+                opaLeft();
+                opaRight();
+            }
         }
 
     return(
         <center><div id={styles.second} className={props.fadeState}>
             <img src={wArrow} className={styles.leftArr} onClick={goLeft}/>
-            <img src={card} className={`l ${size?'sm':'big'}`}/>
-            <img src={card} className={`r ${size?'sm':'big'}`}/>
+            <img src={require(`./card/left/${cnt}.png`)} className={`l ${size1?'sm':'big'}`}/>
+            <img src={require(`./card/right/${cnt}.png`)} className={`r ${size2?'sm':'big'}`}/>
             <div className = {'container card1'}>
                 <div className = {`card ${rot?'':'rot'}`} onClick={()=>setRot(!rot)}>
-                <img src={card} className='front'/>
-                <img src={card2} className='back'/>
+                <img src={require(`./card/left/${cnt}.png`)} className='front'/>
+                <img src={require(`./card/left/${cnt}_back.png`)} className='back'/>
                 </div>
             </div>
             <div>
-                <img src={logo}/>
+                <img src={logo} onClick={hold}/>
                 <p id={styles.wText}>보류하기</p>
             </div>
             <div className = {'container card2'}>
                 <div className = {`card ${rot2?'':'rot'}`} onClick={()=>setRot2(!rot2)}>
-                <img src={card} className='front'/>
-                <img src={card2} className='back'/>
+                <img src={require(`./card/right/${cnt}.png`)} className='front'/>
+                <img src={require(`./card/right/${cnt}_back.png`)} className='back'/>
                 </div>
             </div>
             <img src={wArrow} className={styles.rightArr} onClick={goRight}/>
