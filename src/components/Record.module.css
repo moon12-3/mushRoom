@@ -1,0 +1,66 @@
+#first {
+    width: 1416px;
+    margin-top: 79px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.rTitle {
+    font-size: 64px;
+    font-family: 'Gothic A1', sans-serif;
+    font-weight: 500;
+    margin-bottom: 97px;
+}
+
+#logo {
+    padding-top: 3px;
+    position: absolute;
+    width: 63px;
+}
+
+.abox {
+    height: auto;
+}
+
+.bodyAnswer {
+    position: relative;
+    font-size: 28px;
+    font-family: 'Gothic A1', sans-serif;
+    font-weight: 500;
+    line-height: 35px;
+    padding-bottom: 1.5rem;
+    border-top-width: 1px;
+    opacity: 1;
+    transition: all 0.5s, padding-bottom 0.5s, height 0.5s, transform 0.5s;
+  }
+  
+.bodyNone {
+    padding-top: 0rem;
+    padding-bottom: 0rem;
+    height: 45px;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.2s, padding-bottom 0.5s, height 0.5s, transform 0.5s;
+}
+
+.bTextNone {
+    opacity: 0;
+    transition: all 0.2s, padding-bottom 0.5s, height 0.5s, transform 0.5s;
+}
+
+.bodyDisplay {
+    display: none;
+}
+
+.hText {
+    font-size: 28px;
+    font-family: 'Gothic A1', sans-serif;
+    font-weight: 500;
+    line-height: 35px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.hText :nth-child(2) {
+    font-size: 50px;
+}
