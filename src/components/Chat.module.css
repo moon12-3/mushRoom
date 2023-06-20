@@ -1,0 +1,75 @@
+.ta {
+    padding-left: 19px;
+    padding-top: 19px;
+    resize: none;
+    width: 1155px;
+    height: 121px;
+    border: 1px solid #D9D9D9;
+    background-color: #fbfbfb;
+    font-family: 'Gothic A1', sans-serif;
+    font-size: 15px;
+    margin-bottom: 0;
+}
+
+#ctitle {
+    font-family: 'Gothic A1', sans-serif;
+    font-weight: 500;
+    font-size: 24px;
+    margin-bottom: 22px;
+}
+
+.twrap {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    margin-top: -6px;
+    width: 1176px;
+    height: 50px;
+    border: 1px solid #D9D9D9;
+}
+
+.subtn {
+    margin-left: 17px;
+    font-family: 'Gothic A1', sans-serif;
+    font-weight: 400;
+    font-size: 15px;
+    width: 80px;
+    height: 51px;
+    border: none;
+    background-color: #076A41;
+    color: white;
+}
+
+.cnt {
+    color: rgba(0, 0, 0, 0.32);
+}
+
+.content {
+    margin-top: 40px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.cText {
+    width: 3900px;
+}
+
+.cText :first-child{
+    font-family: 'Gothic A1', sans-serif;
+    font-weight: 500;
+    font-size: 15px;
+    margin-bottom: 9px;
+}
+
+.cText :nth-child(2) {
+    color: rgba(0, 0, 0, 0.32);
+    margin-bottom: 26px;
+}
+
+.cText {
+    font-family: 'Gothic A1', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 160%;
+}

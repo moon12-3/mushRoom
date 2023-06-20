@@ -19,7 +19,7 @@ function Record() {
                 </div>
             </div>
             <div id={styles.second}>
-                <Chat/>
+                <Chat title='records'/>
             </div>
         </>
     )

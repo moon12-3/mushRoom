@@ -91,12 +91,12 @@ function Second(props) {
         }
 
         const opaRight = () => {
-            $(".card2").css('transition', 'all 0.5s');
+            $(".card2").css('transition', 'all 0.3s');
             $('.card2').css('opacity', '0');
             setRot2(true);
             setTimeout(()=> {
                 $('.card2').css('opacity', '1');
-            }, 900);
+            }, 500);
         }
 
         const goRight = () => {
@@ -117,12 +117,12 @@ function Second(props) {
         }
 
         const opaLeft = () => {
-            $(".card1").css('transition', 'all 0.5s');
+            $(".card1").css('transition', 'all 0.3s');
             $('.card1').css('opacity', '0');
             setRot(true);
             setTimeout(()=> {
                 $('.card1').css('opacity', '1');
-            }, 900);
+            }, 500);
         }
 
         const hold = () => {
