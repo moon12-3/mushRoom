@@ -1,85 +1,122 @@
+import React, { useEffect, useState, useRef } from 'react';
+import { addDoc, collection, getDocs, query, orderBy, limit, onSnapshot } from 'firebase/firestore';
+import { firestore } from '../firebase';
 import styles from './Chat.module.css';
 import $ from 'jquery';
-import { addDoc, collection, getDocs } from "firebase/firestore";
-import { useEffect, useState } from 'react';
-
-import { firestore } from '../firebase';
 
 function Chat(props) {
-    const bucket = collection(firestore, props.title);
+  const bucket = collection(firestore, props.title);
 
-    let [comment, setComment] = useState('');
-    let [firebaseData, setFirebaseData] = useState([]);
+  const [comment, setComment] = useState('');
+  const [firebaseData, setFirebaseData] = useState([]);
 
-    useEffect(() => {
-        fetchFirebaseData();
-    }, []);
+  const textareaRef = useRef(null);
 
-    let checkCnt = () => {
-        var content = $('.ta').val();
-        $('#counter').html(content.length);    //글자수 실시간 카운팅
-        if (content.length === 0)  $('#counter').html(0);
-        if (content.length > 700){
-            alert("최대 700자까지 입력 가능합니다.");
-            $('.ta').val(content.substring(0, 700));
-            $('#counter').html("700");
-        }
-    };
-
-    const onSubmit = async (event) => { // 댓글 작성
-        event.preventDefault();
-        if(comment=='') alert("내용을 입력해주세요.");
-        else {
-            alert("댓글을 작성했습니다!");
-            await addDoc(bucket, { comment });
-            setComment('');
-        }
-    };
-
-    const fetchFirebaseData = async () => { // 작성된 댓글 불러오기
-        const querySnapshot = await getDocs(bucket);
+  useEffect(() => {
+    const unsubscribe = onSnapshot(
+      query(bucket, orderBy('timestamp', 'desc'), limit(10)),
+      (snapshot) => {
         const data = [];
-        querySnapshot.forEach((doc) => {
-            data.push({ id: doc.id, ...doc.data() });
+        snapshot.forEach((doc) => {
+          data.push({ id: doc.id, ...doc.data() });
         });
         setFirebaseData(data);
-    };
-
-    return(
-        <>
-            <div id={styles.ctitle}>의견 작성하기</div>
-            <form onSubmit={onSubmit}>
-                <textarea
-                    className={`${styles.ta} ta`}
-                    value={comment}
-                    onChange={(event) => setComment(event.target.value)}
-                    placeholder='당신의 의견을 마음껏 작성해주세요'
-                    onKeyUp={checkCnt}
-                />
-                <div className={styles.twrap}>
-                    <div>
-                        <span className={styles.cnt} id='counter'>0</span>
-                        <span className={styles.cnt}>/700</span>
-                    </div>
-                    <button type='submit' className={styles.subtn}>등록</button>
-                </div>
-            </form>
-            {firebaseData.map((item) => (
-                <Content content={item.comment}/>
-            ))}
-        </>
+      }
     );
+    return () => unsubscribe();
+  }, []);
+
+  const checkCnt = () => {
+    var content = textareaRef.current.value;
+    $('#counter').html(content.length); //글자수 실시간 카운팅
+    if (content.length === 0) $('#counter').html(0);
+    if (content.length > 700) {
+      alert('최대 700자까지 입력 가능합니다.');
+      textareaRef.current.value = content.substring(0, 700);
+      $('#counter').html('700');
+    }
+  };
+
+  const getRandomColor = () => {
+    const colors = ['#008D62', '#325928', '#005666', '#81C147', '#009874', '#BDCF28', '#86A250', '#88DE88'];
+    const randomIndex = Math.floor(Math.random() * colors.length);
+    return colors[randomIndex];
+  };
+
+  const onSubmit = async (event) => {
+    event.preventDefault();
+    if (comment === '') {
+      alert('내용을 입력해주세요.');
+    } else {
+      alert('댓글을 작성했습니다!');
+      await addDoc(bucket, { comment, timestamp: new Date(), color : getRandomColor() });
+      setComment('');
+      textareaRef.current.value = '';
+      textareaRef.current.focus();
+    }
+  };
+
+  return (
+    <>
+      <div id={styles.ctitle}>의견 작성하기</div>
+      <form onSubmit={onSubmit}>
+        <textarea
+          className={`${styles.ta} ta`}
+          value={comment}
+          onChange={(event) => setComment(event.target.value)}
+          placeholder="당신의 의견을 마음껏 작성해주세요"
+          onKeyUp={checkCnt}
+          ref={textareaRef}
+        />
+        <div className={styles.twrap}>
+          <div>
+            <span className={styles.cnt} id="counter">
+              0
+            </span>
+            <span className={styles.cnt}>/700</span>
+          </div>
+          <button type="submit" className={styles.subtn}>
+            등록
+          </button>
+        </div>
+      </form>
+      {firebaseData.map((item) => (
+        <Content key={item.id} content={item.comment} color={item.color} time={item.timestamp}/>
+      ))}
+    </>
+  );
 }
 
 function Content(props) {
-    return (
-        <div className={styles.content}>
-            <svg>
-                <circle cx="29" cy="29" r="29" fill="#D9D9D9"></circle>
-            </svg>
-            <div className={styles.cText}>
-                <div>익명의 잎새버섯</div>
-                <div>시간</div>
+
+    const detailDate = (createdAt) => {
+            const milliSeconds = new Date().getTime() - createdAt
+            const seconds = milliSeconds / 1000
+            console.log(`현재 : ${Date.now()}, 올린 시간 : ${createdAt}`);
+            if (seconds < 60) return `방금 전`
+            const minutes = seconds / 60
+            if (minutes < 60) return `${Math.floor(minutes)}분 전`
+            const hours = minutes / 60
+            if (hours < 24) return `${Math.floor(hours)}시간 전`
+            const days = hours / 24
+            if (days < 7) return `${Math.floor(days)}일 전`
+            const weeks = days / 7
+            if (weeks < 5) return `${Math.floor(weeks)}주 전`
+            const months = days / 30
+            if (months < 12) return `${Math.floor(months)}개월 전`
+            const years = days / 365
+            return `${Math.floor(years)}년 전`
+    };
+    
+
+  return (
+    <div className={styles.content}>
+      <svg>
+        <circle cx="29" cy="29" r="29" fill={props.color}></circle>
+      </svg>
+      <div className={styles.cText}>
+        <div>익명의 잎새버섯</div>
+                <div>{detailDate(props.time)}</div>
                 <div>
                 {props.content}
                 </div>
