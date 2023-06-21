@@ -10,6 +10,9 @@
     font-family: 'Gothic A1', sans-serif;
     font-weight: 500;
     margin-bottom: 20px;
+    white-space: nowrap; /* 줄 바꿈 방지 */
+    letter-spacing: -0.05em;
+    text-align-last: justify;
 }
 
 #logo {

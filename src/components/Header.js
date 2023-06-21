@@ -21,7 +21,7 @@ function Header() {
             <div className={showBackground ? 'nav-bg' : 'nav'}>
                 <div className='in-nav'>
                     <div>
-                    <img className = "logo" src={showBackground ? logo : logo2}/>
+                    <Link to='/'><img className = "logo" src={showBackground ? logo : logo2}/></Link>
                     </div>
                     <ul className="nav-list">
                         <li><Link to='/'>소개</Link></li>

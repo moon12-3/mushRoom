@@ -1,11 +1,29 @@
-import { useState } from 'react';
+import { collection, getDocs } from 'firebase/firestore';
+import { useEffect, useState } from 'react';
 import $ from 'jquery';
 import styles from './Record.module.css'
 import logo from '../img/logo.png'
 import Chat from './Chat';
+import { firestore } from '../firebase';
 
 function Record() {
-    let [rot, setRot] = useState(true);
+    const bucket = collection(firestore, 'world');
+    const [comments, setComments] = useState([]);
+
+    useEffect(() => {
+        async function fetchData() {
+          try {
+            const querySnapshot = await getDocs(bucket);
+            const data = querySnapshot.docs.map((doc) => doc.data().comment);
+            setComments(data);
+          } catch (error) {
+            console.error('Error fetching data: ', error);
+          }
+        }
+    
+        fetchData();
+      }, []);
+
     return (
         <>
             <div id={styles.first}>
@@ -15,7 +33,22 @@ function Record() {
                     당신의 고민과 가치는 어디에 있나요?
                 </div>
                 <div className={styles.accodi}>
-                    <AccordionEx title="사용자 고민은 여기 위로 추가"/>
+                {comments.map((comment, index) => {
+                if (comment.length <= 37) {
+                    return (
+                        <AccordionEx title={comment} text="" />
+
+                    );
+                } else {
+                    const title = comment.substring(0, 37);
+                    const text = comment.substring(37);
+
+                    return (
+                        <AccordionEx title={title} text={text} />
+                    );
+                }
+                })}
+                    
                 </div>
             </div>
             <div id={styles.second}>
@@ -49,9 +82,7 @@ function AccordionEx(props) {
             </div>
             <div className={`${styles.bodyAnswer} ${tab}`}>
                     <div className={`${tab2}`}>
-                        저는 테스트를 위해 존재해요저는 테스트를 위해 존재해요저는 테스트를 위해 존재해요<br/>
-                        저는 테스트를 위해 존재해요저는 테스트를 위해 존재해요<br/>
-                        저는 테스트를 위해 존재해요저는 테스트를 위해 존재해요저는 테스트를 위해 존재해요
+                       {props.text}
                     </div>
             </div>
         </div>

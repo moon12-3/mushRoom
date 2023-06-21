@@ -111,3 +111,45 @@
     font-family: 'Gothic A1', sans-serif;
     font-weight: 500;
 }
+
+#worry {
+    font-size: 36px;
+    color: #FFFFFF;
+    font-family: 'Gothic A1', sans-serif;
+    font-weight: 500;
+}
+
+#world {
+    position: absolute;
+    top: 0;
+    left: 450px;
+}
+
+#worldText {
+    padding-left: 19px;
+    padding-top: 19px;
+    width: 401px;
+    height: 164px;
+    font-family: 'Gothic A1', sans-serif;
+    font-weight: 500;
+    background: #FFFFFF;
+    border-radius: 7px;
+    resize: none;
+    position: absolute;
+    top: 455px;
+    font-size: 19px;
+    line-height: 24px;
+    left: 488px;
+}
+
+.btnText {
+    margin-top: 37.12px;
+    color: #FFFFFF;
+    font-size: 22px;
+    line-height: 28px;    
+}
+
+#second a {
+    color: #FFFFFF;
+    text-decoration-line: none;
+}

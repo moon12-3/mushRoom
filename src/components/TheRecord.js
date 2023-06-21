@@ -8,13 +8,16 @@ import dummy from "../db/data.json";
 function TheRecord() {
     const {subject} = useParams();
     let data = dummy.record.find(a => a.name === subject);
+
+    const titleWithNbsp = data.title.replace(/ /g, '\u00a0');
+
     return(
         <>
             <div id={styles.first}>
                 <div className={styles.rTitle}>
                     {data.name}&nbsp;<img src={logo} id={styles.logo}/>
                     <br/>
-                    {data.title}
+                    {titleWithNbsp}
                 </div>
                 <div id={styles.subContent}>
                    <Para img={`${data.name}1`} sub={data.sub1} text={data.text11} text2={data.text12}/>
@@ -29,13 +32,16 @@ function TheRecord() {
 }
 
 function Para(props) {
+
+    const nameWithLineBreak = props.text2.replace(/\n/g, '<br>');
+
     return(
         <div id={styles.pContent}>
             <img src={require(`./thesis/${props.img}.png`)} id={styles.pImg}/>
             <div id={styles.pTitle}>{props.sub}</div>
             <div id={styles.pText}>
                 {props.text}<br/><br/>
-                {props.text2}
+                <div dangerouslySetInnerHTML={{ __html: nameWithLineBreak }} />
             </div>
         </div>
     )

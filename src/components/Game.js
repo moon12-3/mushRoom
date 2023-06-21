@@ -1,9 +1,13 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useState, useRef } from 'react'
 import styles from './Game.module.css'
 import wArrow from './img/wArrow.png'
 import {Link} from 'react-router-dom'
 import logo from '../img/logo2.png'
+import world from './card/world.png'
 import $ from 'jquery';
+import { collection, addDoc } from 'firebase/firestore';
+
+import { firestore } from '../firebase';
 
 function Game() {
     let [next, setNext] = useState(true);
@@ -14,7 +18,7 @@ function Game() {
         setTimeout(() => {
           setNext(!next);
           setFadeState('fade-in');
-        }, 500); 
+        }, 100); 
     }
           
     return (
@@ -64,7 +68,107 @@ function First(props) {
     )
 }
 
+
+
 function Second(props) {
+    let [next, setNext] = useState(true);
+    let [fadeState, setFadeState] = useState('fade-in');
+
+    const playClick = () => {
+        setFadeState('fade-out');
+        setTimeout(() => {
+          setNext(!next);
+          setFadeState('fade-in');
+        }, 500); 
+    }
+          
+    return (
+        <div>
+            {next?<Card fadeState={fadeState} click={playClick}/>:
+            <Write fadeState={fadeState}/>}
+        </div>
+    )
+}
+
+function Write(props) {
+    let [next, setNext] = useState(true);
+    let [fadeState, setFadeState] = useState('fade-in');
+    useEffect(()=> {
+        setTimeout(()=> {
+            setFadeState('fade-out');
+            setTimeout(() => {
+              setNext(!next);
+              setFadeState('fade-in');
+            }, 500); 
+        }, 500);
+       
+    }, [])
+
+    return(
+        <center><div id={styles.second} className={props.fadeState}>
+            <Link to='/'>
+                <div>
+                    <img src={wArrow} className={styles.leftArr}/>
+                    <div className={styles.btnText}>메인으로</div>
+                </div>
+                </Link>
+            <div className={fadeState}>
+                {next?
+                    <div id={styles.worry}>이제 당신의 고민을 공유해주실래요?</div>:
+                    <WriteCard/>
+                }
+            </div>
+            <Link to='/record'>
+                <div>
+                    <img src={wArrow} className={styles.rightArr}/>
+                    <div className={styles.btnText}>기록보기</div>
+                </div>
+            </Link>
+        </div></center>
+    )
+}
+
+
+function WriteCard() {
+  const bucket = collection(firestore, 'world');
+  const [comment, setComment] = useState('');
+  const textareaRef = useRef(null);
+
+  async function handleKeyPress(event) {
+    if (event.keyCode === 13) {
+      event.preventDefault(); // Enter 키 기본 동작 (줄바꿈) 방지
+
+      if (comment === '') {
+        alert('내용을 입력해주세요.');
+      } else {
+        alert('의견을 성공적으로 남겼습니다!');
+        await addDoc(bucket, { comment });
+        setComment('');
+        textareaRef.current.value = '';
+        textareaRef.current.focus();
+      }
+    }
+  }
+
+  return (
+    <div className={styles.write}>
+      <img src={world} id={styles.world} />
+      <div>
+        <textarea
+          id={styles.worldText}
+          placeholder="당신의 고민은 무엇인지 적어주실래요?"
+          onKeyDown={handleKeyPress}
+          value={comment}
+          onChange={(event) => setComment(event.target.value)}
+          ref={textareaRef}
+        />
+      </div>
+    </div>
+  );
+}
+
+
+function Card(props) {
     let [rot, setRot] = useState(true);
     let [rot2, setRot2] = useState(true);
     let [size1, setSize1] = useState(true);
@@ -73,13 +177,14 @@ function Second(props) {
     let [cnt2, setCnt2] = useState(1);
     let [notStop, setStop] = useState(true);
     let [cards, setCards] = useState(['zoo', 'free', 'comm', 'vegetable', 'water', 'traffic']);
+    let [go, setGo] = useState(false);
 
     useEffect(()=> {
-        if(cnt==5) console.log('넘어가야 해요!!');
+        if(cnt==5) setGo(true);
     }, [cnt]);
 
         const goLeft = () => {
-            if(notStop) {
+            if(!go) {
                 setStop(false);
                 $(".card1").css('left', '-1000px');
                 $(".card1").css('transition', 'all 0.5s');
@@ -88,7 +193,6 @@ function Second(props) {
                 setRot(true);
                 setTimeout(()=>setCnt(cnt+=1),300);
                 setTimeout(()=>{
-                    console.log(cnt);
                     setStop(true);
                     setSize1(true);
                     $(".card1").css('transition', 'all 0s');
@@ -96,6 +200,7 @@ function Second(props) {
                     setCnt2((cnt2+=1)%6);
                 }, 900);
             }
+            else if(go) props.click();
         }
 
         const opaRight = () => {
@@ -104,11 +209,11 @@ function Second(props) {
             setRot2(true);
             setTimeout(()=> {
                 $('.card2').css('opacity', '1');
-            }, 500);
+            }, 300);
         }
 
         const goRight = () => {
-            if(notStop) {
+            if(!go) {
                 setStop(false);
                 $(".card2").css('right', '-1000px');
                 $(".card2").css('transition', 'all 0.5s');
@@ -124,6 +229,7 @@ function Second(props) {
                     setCnt2((cnt2+=1)%6);
                 }, 900);
             }
+            else if(go) props.click();
         }
 
         const opaLeft = () => {
@@ -132,7 +238,7 @@ function Second(props) {
             setRot(true);
             setTimeout(()=> {
                 $('.card1').css('opacity', '1');
-            }, 500);
+            }, 300);
         }
 
         const hold = () => {
