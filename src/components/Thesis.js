@@ -35,7 +35,7 @@ function Thesis() {
                 <div id={styles.water}>
                     <img src={water}/>
                     <img src={water2} className={styles.wimg}/>
-                    <div><img src={arrbtn} className={styles.arrBtn} id={styles.arrBtn}/></div>
+                    <Link to={`/indi/식수`}><img src={arrbtn} className={styles.arrBtn} id={styles.arrBtn}/></Link>
                     <div className={styles.theText} id={styles.theText}>
                         <div>식수</div>
                         제목과 정확한 논제를?
@@ -44,7 +44,7 @@ function Thesis() {
 
                 <div id={styles.zoo}>
                     <img src={zoo}/>
-                    <div><img src={arrbtn} className={styles.arrBtn} id={styles.arrBtn2}/></div>
+                    <Link to={`/indi/동물원`}><img src={arrbtn} className={styles.arrBtn} id={styles.arrBtn2}/></Link>
                     <div className={styles.theText} id={styles.theText2}>
                         <div>동물원</div>
                         동물원은 유지되어야 하는가?
@@ -53,7 +53,7 @@ function Thesis() {
 
                 <div id={styles.traffic}>
                     <img src={traffic}/>
-                    <div><img src={arrbtn} className={styles.arrBtn} id={styles.arrBtn3}/></div>
+                    <Link to={`/indi/교통편`}><img src={arrbtn} className={styles.arrBtn} id={styles.arrBtn3}/></Link>
                     <div className={styles.theText} id={styles.theText2}>
                         <div>교통편</div>
                         편리함과 탄소 배출량, 책임은 누구에게?
@@ -62,7 +62,7 @@ function Thesis() {
 
                 <div id={styles.world}>
                     <img src={world}/>
-                    <div><img src={arrbtn} className={styles.arrBtn} id={styles.arrBtn4}/></div>
+                    <Link to={`/indi/세계`}><img src={arrbtn} className={styles.arrBtn} id={styles.arrBtn4}/></Link>
                     <div className={styles.theText} id={styles.theText3}>
                         <div>세계</div>
                         당신의 고민과 가치는<br/>
@@ -76,7 +76,7 @@ function Thesis() {
                         동물복지 시장과 물가
                     </div>
                     <img src={free}/>
-                    <div><img src={arrbtn} className={styles.arrBtn} id={styles.arrBtn5}/></div>
+                    <Link to={`/indi/자유시장`}><img src={arrbtn} className={styles.arrBtn} id={styles.arrBtn5}/></Link>
                 </div>
 
                 <div id={styles.vegetable}>
@@ -86,12 +86,12 @@ function Thesis() {
                         개인의 자유 사이
                     </div>
                     <img src={vegetable}/>
-                    <Link to='/ex'><img src={arrbtn} className={styles.arrBtn} id={styles.arrBtn6}/></Link>
+                    <Link to='/indi/채식'><img src={arrbtn} className={styles.arrBtn} id={styles.arrBtn6}/></Link>
                 </div>
 
                 <div id={styles.community}>
                     <img src={community}/>
-                    <div><img src={arrbtn} className={styles.arrBtn} id={styles.arrBtn7}/></div>
+                    <Link to={`/indi/공동체`}><img src={arrbtn} className={styles.arrBtn} id={styles.arrBtn7}/></Link>
                     <div className={styles.theText} id={styles.theText6}>
                         <div>공동체</div>
                         제목과 정확한 논제를?

@@ -8,6 +8,7 @@ import Accodi from './components/Accodi';
 import Game from './components/Game';
 import { BrowserRouter, Route, Routes} from 'react-router-dom'
 import ScrollToTop from './components/ScrollToTop';
+import TheRecord from './components/TheRecord';
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
           <Route path="/thesis" element={<Thesis/>}/>
           <Route path="/game" element={<Game/>}/>
           <Route path="/accodion" element={<Accodi/>}/>
+          <Route path="/indi/:subject" element={<TheRecord/>}/>
       </Routes>
       <Footer/>
     </BrowserRouter>
