@@ -62,7 +62,7 @@ function Thesis() {
 
                 <div id={styles.world}>
                     <img src={world}/>
-                    <Link to={`/indi/세계`}><img src={arrbtn} className={styles.arrBtn} id={styles.arrBtn4}/></Link>
+                    <Link to={`/record`}><img src={arrbtn} className={styles.arrBtn} id={styles.arrBtn4}/></Link>
                     <div className={styles.theText} id={styles.theText3}>
                         <div>세계</div>
                         당신의 고민과 가치는<br/>

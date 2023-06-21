@@ -2,9 +2,11 @@ import title from "../img/title.png";
 import '../App.css'
 import styles from "./Main.module.css"
 import logo from "../img/logo.png"
-import logo2 from "../img/logo2.png"
 import arrow from "../img/arrow.png"
 import arrow2 from "../img/arrow2.png"
+import arrow3 from "../img/arrow3.png"
+import gr from "../img/grect.png"
+import gr2 from "../img/grect2.png"
 import rect from "../img/rect.png"
 import rect2 from "../img/rect2.png"
 import rect3 from "../img/rect3.png"
@@ -42,11 +44,15 @@ function Main() {
                         해야 한다는 것이다.
                     </div>
                 </div>
+                <div className={styles.intro} id={styles.gIntro}>
+                    <span>게임</span>
+                    <span>다시 상상한 세계</span>
+                </div>
                 <div className={styles.gContent}>
                     <div id={styles.gTitle}>
                         <div id={styles.gLo}>
                             <img src={logo} className={styles.logo3}/>
-                            <div id={styles.gTitle2}><span id={styles.gr}>「다시 상상한 세계」</span>게임은 일종의 밸런스 게임 형식을<br/>
+                            <div id={styles.gTitle2}><span id={styles.cgr}>「다시 상상한 세계」</span>게임은 일종의 밸런스 게임 형식을<br/>
                                 활용하여 각자의 ‘우선순위’를 구성할 수 있습니다.
                             </div>
                         </div>
@@ -55,8 +61,19 @@ function Main() {
                             모든 가치가 존중받는, 공존하는, 그 세계에 도달할 가능성을 가늠해 보세요. 
                         </div>
                     </div>
+                    <img src={gr} id={styles.gr}/>
+                    <div id={styles.gr2}>
+                        <img src={gr2}/>
+                        <div id={styles.goGame}>
+                            <Link to='/game'>
+                            <img src={arrow3}/><br/>
+                            눌러서<br/>
+                            게임 바로가기
+                            </Link>
+                        </div>
+                    </div>
                 </div>
-                <div className={styles.intro}>
+                <div className={styles.intro} id={styles.rIntro}>
                     <span>기록</span>
                     <span>다시 상상한 세계</span>
                 </div>
@@ -83,7 +100,7 @@ function Main() {
                     <img src={rect} id={styles.r1}/>
                     <img src={rect2} id={styles.r2}/>
                     <img src={rect3} id={styles.r3}/>
-                    <img src={logo2} className={styles.logo2}/>
+                    <img src={logo} className={styles.logo2}/>
                 </div>
             </div>
         </div>

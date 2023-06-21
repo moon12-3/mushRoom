@@ -26,7 +26,7 @@ function Header() {
                     <ul className="nav-list">
                         <li><Link to='/'>소개</Link></li>
                         <li><Link to='/game'>게임</Link></li>
-                        <li><Link to='/record'>기록</Link></li>
+                        <li><Link to='/thesis'>기록</Link></li>
                     </ul>
                 </div>
             </div>

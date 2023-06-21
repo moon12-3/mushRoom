@@ -1,9 +1,10 @@
 #first {
     margin-top: 57px;
     background-image: url('../img/first-bg.png');
-    background-size: cover;
+    background-size: contain;
+    background-repeat: no-repeat;
     position: relative;
-    height: 993px;
+    height: 1403px;
 }
 
 #top {
@@ -26,6 +27,10 @@
 .intro {
     font-weight: 600;
     font-size: 20px;
+}
+
+#rIntro {
+    margin-bottom: -60px;
 }
 
 .intro :first-child {
@@ -89,8 +94,87 @@
     position: absolute;
 }
 
+#gIntro {
+    margin-top: 373px;
+    margin-bottom: 100px;
+}
+
 .gContent {
-    margin-bottom: 300px;
+    position: relative;
+    margin-bottom: 800px;
+}
+
+#gTitle {
+    position: relative;
+    z-index: 100;
+    margin-top: 42px;
+    font-weight: 500;
+    font-size: 40px;
+    line-height: 160%;
+    font-family: 'Gothic A1', sans-serif;
+    font-weight: 500;
+    margin-bottom: 46px;
+}
+
+#gTitle2{
+    width: 922px;
+    text-align-last: justify;
+    text-align: right;
+}
+
+#gTitle :nth-child(2) {
+    float: right;
+    letter-spacing: -0.02em;
+    text-align: left;
+}
+
+#cgr {
+    color: #076A41;
+}
+
+.gLo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#gr, #gr2 {
+    position: absolute;
+}
+
+#gr {
+    top: 0;
+    right: 0;
+}
+
+#gr2 {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    width: 780px;
+    left: 81px;
+    top: 402.89px;
+}
+
+#goGame {
+    font-family: 'Gothic A1', sans-serif;
+    font-weight: 500;
+    font-size: 45px;
+    transition: all 0.5s;
+}
+
+#goGame a {
+    text-decoration: none;
+    transition: all 0.5s;
+    color: black;
+}
+
+#goGame a:hover {
+    color: #076A41;
+}
+
+#goGame:hover{
+    color: #076A41;
 }
 
 .rContent {
@@ -210,37 +294,4 @@
 #arrow2 {
     top: 700px;
     right: 0;
-}
-
-#gTitle {
-    margin-top: 42px;
-    font-weight: 500;
-    font-size: 40px;
-    line-height: 160%;
-
-    font-family: 'Gothic A1', sans-serif;
-    font-weight: 500;
-    margin-bottom: 46px;
-}
-
-#gTitle2{
-    width: 922px;
-    text-align-last: justify;
-    text-align: right;
-}
-
-#gTitle :nth-child(2) {
-    float: right;
-    letter-spacing: -0.02em;
-    text-align: left;
-}
-
-#gr {
-    color: #076A41;
-}
-
-.gLo {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
 }

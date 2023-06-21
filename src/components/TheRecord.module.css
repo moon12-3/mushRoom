@@ -1,5 +1,5 @@
 #first {
-    width: 1416px;
+    width: 1417px;
     margin-top: 79px;
     margin-left: auto;
     margin-right: auto;
@@ -9,7 +9,7 @@
     font-size: 64px;
     font-family: 'Gothic A1', sans-serif;
     font-weight: 500;
-    margin-bottom: 97px;
+    margin-bottom: 20px;
 }
 
 #logo {
@@ -20,7 +20,40 @@
 
 #second {
     width: 1176px;
-    margin-top: 288px;
+    margin-top: 100px;
     margin-left: auto;
     margin-right: auto;
+}
+
+.theImgs {
+    display: flex;
+    justify-content: space-between;
+}
+
+.tContent {
+    width: 696px;
+}
+
+#subContent {
+    display: flex;
+    justify-content: space-between;
+}
+
+#pTitle {
+    margin-top: 26px;
+    font-family: 'Gothic A1', sans-serif;
+    font-weight: 500;
+    font-size: 23px;
+    line-height: 130%;
+}
+
+#pText {
+    margin-top: 11px;
+    font-family: 'Gothic A1', sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 160%;
+    width: 696px;
+    text-align: justify;
+    color: rgba(0, 0, 0, 0.76);
 }

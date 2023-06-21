@@ -1,8 +1,7 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import styles from './Game.module.css'
 import wArrow from './img/wArrow.png'
 import {Link} from 'react-router-dom'
-import card from './card/left/1.png'
 import logo from '../img/logo2.png'
 import $ from 'jquery';
 
@@ -70,8 +69,14 @@ function Second(props) {
     let [rot2, setRot2] = useState(true);
     let [size1, setSize1] = useState(true);
     let [size2, setSize2] = useState(true);
-    let [cnt, setCnt] = useState(1);
+    let [cnt, setCnt] = useState(0);
+    let [cnt2, setCnt2] = useState(1);
     let [notStop, setStop] = useState(true);
+    let [cards, setCards] = useState(['zoo', 'free', 'comm', 'vegetable', 'water', 'traffic']);
+
+    useEffect(()=> {
+        if(cnt==5) console.log('넘어가야 해요!!');
+    }, [cnt]);
 
         const goLeft = () => {
             if(notStop) {
@@ -81,11 +86,14 @@ function Second(props) {
                 opaRight();
                 setSize1(false);
                 setRot(true);
+                setTimeout(()=>setCnt(cnt+=1),300);
                 setTimeout(()=>{
+                    console.log(cnt);
                     setStop(true);
                     setSize1(true);
                     $(".card1").css('transition', 'all 0s');
                     $(".card1").css('left', '100px');
+                    setCnt2((cnt2+=1)%6);
                 }, 900);
             }
         }
@@ -107,11 +115,13 @@ function Second(props) {
                 opaLeft();
                 setSize2(false);
                 setRot2(true);
+                setTimeout(()=>setCnt(cnt+=1),300);
                 setTimeout(()=>{
                     setStop(true);
                     setSize2(true);
                     $(".card2").css('transition', 'all 0s');
                     $(".card2").css('right', '100px');
+                    setCnt2((cnt2+=1)%6);
                 }, 900);
             }
         }
@@ -129,18 +139,23 @@ function Second(props) {
             if(notStop) {
                 opaLeft();
                 opaRight();
+                setTimeout(()=> {
+                    let copy = [...cards];
+                    copy.push(copy.splice(cnt, 1)[0]);
+                    setCards(copy);
+                }, 300)
             }
         }
 
     return(
         <center><div id={styles.second} className={props.fadeState}>
             <img src={wArrow} className={styles.leftArr} onClick={goLeft}/>
-            <img src={require(`./card/left/${cnt}.png`)} className={`l ${size1?'sm':'big'}`}/>
-            <img src={require(`./card/right/${cnt}.png`)} className={`r ${size2?'sm':'big'}`}/>
+            <img src={require(`./card/left/${cards[cnt2]}.png`)} className={`l ${size1?'sm':'big'}`}/>
+            <img src={require(`./card/right/${cards[cnt2]}.png`)} className={`r ${size2?'sm':'big'}`}/>
             <div className = {'container card1'}>
                 <div className = {`card ${rot?'':'rot'}`} onClick={()=>setRot(!rot)}>
-                <img src={require(`./card/left/${cnt}.png`)} className='front'/>
-                <img src={require(`./card/left/${cnt}_back.png`)} className='back'/>
+                <img src={require(`./card/left/${cards[cnt]}.png`)} className='front'/>
+                <img src={require(`./card/left/${cards[cnt]}_back.png`)} className='back'/>
                 </div>
             </div>
             <div>
@@ -149,8 +164,8 @@ function Second(props) {
             </div>
             <div className = {'container card2'}>
                 <div className = {`card ${rot2?'':'rot'}`} onClick={()=>setRot2(!rot2)}>
-                <img src={require(`./card/right/${cnt}.png`)} className='front'/>
-                <img src={require(`./card/right/${cnt}_back.png`)} className='back'/>
+                <img src={require(`./card/right/${cards[cnt]}.png`)} className='front'/>
+                <img src={require(`./card/right/${cards[cnt]}_back.png`)} className='back'/>
                 </div>
             </div>
             <img src={wArrow} className={styles.rightArr} onClick={goRight}/>
