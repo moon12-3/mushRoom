@@ -1,6 +1,9 @@
 #first {
+    margin-top: 57px;
+    background-image: url('../img/first-bg.png');
+    background-size: cover;
     position: relative;
-    height: 100vh;
+    height: 993px;
 }
 
 #top {
@@ -16,8 +19,6 @@
 
 .title {
     position:absolute; 
-    top:6%;
-    margin-top: 20vh;
     vertical-align: middle;
     width:100vmax;
 }
