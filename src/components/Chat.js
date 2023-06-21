@@ -38,7 +38,7 @@ function Chat(props) {
   };
 
   const getRandomColor = () => {
-    const colors = ['#008D62', '#325928', '#005666', '#81C147', '#009874', '#BDCF28', '#86A250', '#88DE88'];
+    const colors = ['#008D62', '#325928', '#005666', '#81C147', '#009874', '#BDCF28', '#86A250', '#88DE88', '#AAEEAA', '#2ABCB4'];
     const randomIndex = Math.floor(Math.random() * colors.length);
     return colors[randomIndex];
   };
@@ -49,7 +49,7 @@ function Chat(props) {
       alert('내용을 입력해주세요.');
     } else {
       alert('댓글을 작성했습니다!');
-      await addDoc(bucket, { comment, timestamp: new Date(), color : getRandomColor() });
+      await addDoc(bucket, { comment, timestamp: new Date().getTime(), color : getRandomColor() });
       setComment('');
       textareaRef.current.value = '';
       textareaRef.current.focus();
@@ -90,7 +90,8 @@ function Chat(props) {
 function Content(props) {
 
     const detailDate = (createdAt) => {
-            const milliSeconds = new Date().getTime() - createdAt
+            console.log(createdAt);
+            const milliSeconds = new Date().getTime() - createdAt;
             const seconds = milliSeconds / 1000
             console.log(`현재 : ${Date.now()}, 올린 시간 : ${createdAt}`);
             if (seconds < 60) return `방금 전`

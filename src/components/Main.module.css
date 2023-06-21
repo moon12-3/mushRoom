@@ -202,7 +202,44 @@
     right: 0;
 }
 
+.logo3 {
+    margin-top: 5px;
+}
+
 #arrow2 {
     top: 700px;
     right: 0;
+}
+
+#gTitle {
+    margin-top: 42px;
+    font-weight: 500;
+    font-size: 40px;
+    line-height: 160%;
+
+    font-family: 'Gothic A1', sans-serif;
+    font-weight: 500;
+    margin-bottom: 46px;
+}
+
+#gTitle2{
+    width: 922px;
+    text-align-last: justify;
+    text-align: right;
+}
+
+#gTitle :nth-child(2) {
+    float: right;
+    letter-spacing: -0.02em;
+    text-align: left;
+}
+
+#gr {
+    color: #076A41;
+}
+
+.gLo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }

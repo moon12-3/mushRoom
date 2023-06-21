@@ -43,7 +43,18 @@ function Main() {
                     </div>
                 </div>
                 <div className={styles.gContent}>
-                    {/* <div>우리 사회에는 많은 가치와 다양성이 존재한다. 함께 가지고 가야 할 문제, 해결해야 할 문제 등 그 양상은<br/>제각기 다르지만, 모든 일에는 우선순위와 순서 또한 존재한다.</div> */}
+                    <div id={styles.gTitle}>
+                        <div id={styles.gLo}>
+                            <img src={logo} className={styles.logo3}/>
+                            <div id={styles.gTitle2}><span id={styles.gr}>「다시 상상한 세계」</span>게임은 일종의 밸런스 게임 형식을<br/>
+                                활용하여 각자의 ‘우선순위’를 구성할 수 있습니다.
+                            </div>
+                        </div>
+                        <div>
+                            연결되어 있는 가치와 그사이에서의 선택에 대해 질문합니다. 당신의 선택을 토대로<br/>
+                            모든 가치가 존중받는, 공존하는, 그 세계에 도달할 가능성을 가늠해 보세요. 
+                        </div>
+                    </div>
                 </div>
                 <div className={styles.intro}>
                     <span>기록</span>
