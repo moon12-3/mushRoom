@@ -16,8 +16,7 @@ function TheRecord() {
             <div id={styles.first}>
                 <div className={styles.rTitle}>
                     {data.name}&nbsp;<img src={logo} id={styles.logo}/>
-                    <br/>
-                    {titleWithNbsp}
+                    <div className={styles.rTitle2}>{titleWithNbsp}</div>
                 </div>
                 <div id={styles.subContent}>
                    <Para img={`${data.name}1`} sub={data.sub1} text={data.text11} text2={data.text12}/>

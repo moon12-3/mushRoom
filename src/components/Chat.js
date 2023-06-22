@@ -48,7 +48,7 @@ function Chat(props) {
     const names = ['잎새버섯','먹물버섯','밤버섯','잣버섯','꾀꼬리버섯','까치버섯','싸리버섯','큰갓버섯','달걀버섯','치마버섯','벚꽃버섯','비늘버섯','개암버섯','뽕나무버섯',
     '광대버섯','느타리버섯','팽이버섯','큰낙엽버섯','표고버섯','말불버섯','만가닥버섯','능이버섯','말굽버섯','송이버섯','기와버섯','망태버섯','풀버섯','팽나무버섯','목이버섯','영지버섯'];
     const randomIndex = Math.floor(Math.random() * names.length);
-    return names[randomIndex];
+    return '익명의 ' + names[randomIndex];
   };
 
   const onSubmit = async (event) => {

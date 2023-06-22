@@ -100,7 +100,7 @@ function Write(props) {
               setNext(!next);
               setFadeState('fade-in');
             }, 500); 
-        }, 500);
+        }, 2000);
        
     }, [])
 

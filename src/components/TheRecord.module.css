@@ -11,13 +11,22 @@
     font-weight: 500;
     margin-bottom: 20px;
     white-space: nowrap; /* 줄 바꿈 방지 */
+}
+
+.rTitle2 {
+    width: 1416px;
+    font-size: 64px;
+    font-family: 'Gothic A1', sans-serif;
+    font-weight: 500;
+    margin-bottom: 20px;
+    white-space: nowrap; /* 줄 바꿈 방지 */
     letter-spacing: -0.05em;
     text-align-last: justify;
 }
 
 #logo {
-    padding-top: 3px;
     position: absolute;
+    padding-top: 3px;
     width: 63px;
 }
 

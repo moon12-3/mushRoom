@@ -15,6 +15,11 @@ import vegetable from './mimg/vegetable.png'
 import community from './mimg/community.png'
 
 function Thesis() {
+
+    let goparam = (e) => {
+        window.location.href = `/indi/${e}`;
+    }
+
     return (
         <>
             <div id={styles.first}>
@@ -32,7 +37,7 @@ function Thesis() {
             </div>   
 
             <div id={styles.third}>
-                <div id={styles.water}>
+                <div id={styles.water} onClick={()=> {goparam('식수')}}>
                     <img src={water}/>
                     <img src={water2} className={styles.wimg}/>
                     <Link to={`/indi/식수`}><img src={arrbtn} className={styles.arrBtn} id={styles.arrBtn}/></Link>
@@ -42,7 +47,7 @@ function Thesis() {
                     </div>
                 </div>
 
-                <div id={styles.zoo}>
+                <div id={styles.zoo} onClick={()=> {goparam('동물원')}}>
                     <img src={zoo}/>
                     <Link to={`/indi/동물원`}><img src={arrbtn} className={styles.arrBtn} id={styles.arrBtn2}/></Link>
                     <div className={styles.theText} id={styles.theText2}>
@@ -51,7 +56,7 @@ function Thesis() {
                     </div>
                 </div>
 
-                <div id={styles.traffic}>
+                <div id={styles.traffic} onClick={()=> {goparam('교통편')}}>
                     <img src={traffic}/>
                     <Link to={`/indi/교통편`}><img src={arrbtn} className={styles.arrBtn} id={styles.arrBtn3}/></Link>
                     <div className={styles.theText} id={styles.theText2}>
@@ -60,7 +65,7 @@ function Thesis() {
                     </div>
                 </div>
 
-                <div id={styles.world}>
+                <div id={styles.world} onClick={()=> {window.location.href = `/record`;}}>
                     <img src={world}/>
                     <Link to={`/record`}><img src={arrbtn} className={styles.arrBtn} id={styles.arrBtn4}/></Link>
                     <div className={styles.theText} id={styles.theText3}>
@@ -70,7 +75,7 @@ function Thesis() {
                     </div>
                 </div>
 
-                <div id={styles.free}>
+                <div id={styles.free} onClick={()=> {goparam('자유시장')}}>
                     <div className={styles.theText} id={styles.theText4}>
                         <div>자유시장</div>
                         동물복지 시장과 물가
@@ -79,7 +84,7 @@ function Thesis() {
                     <Link to={`/indi/자유시장`}><img src={arrbtn} className={styles.arrBtn} id={styles.arrBtn5}/></Link>
                 </div>
 
-                <div id={styles.vegetable}>
+                <div id={styles.vegetable} onClick={()=> {goparam('채식')}}>
                     <div className={styles.theText} id={styles.theText5}>
                         <div>채식</div>
                         학교 급식 의무 채식일과<br/>
@@ -89,7 +94,7 @@ function Thesis() {
                     <Link to='/indi/채식'><img src={arrbtn} className={styles.arrBtn} id={styles.arrBtn6}/></Link>
                 </div>
 
-                <div id={styles.community}>
+                <div id={styles.community} onClick={()=> {goparam('공동체')}}>
                     <img src={community}/>
                     <Link to={`/indi/공동체`}><img src={arrbtn} className={styles.arrBtn} id={styles.arrBtn7}/></Link>
                     <div className={styles.theText} id={styles.theText6}>

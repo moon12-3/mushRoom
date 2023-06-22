@@ -45,6 +45,7 @@
 }
 
 .bTextNone {
+    padding-bottom: 45px;
     opacity: 0;
     transition: all 0.2s, padding-bottom 0.5s, height 0.5s, transform 0.5s;
 }
