@@ -45,6 +45,10 @@ body::-webkit-scrollbar {
   height: 91px;
 }
 
+.nav, .nav-bg {
+  position: sticky;
+}
+
 .in-nav {
   padding-top: -20px;
   width : 1416px;
@@ -256,4 +260,19 @@ footer {
 
 .card img {
   transition: all 0.5s;
+}
+
+.sticky-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  transition: transform 0.3s ease-in-out;
+}
+
+.sticky-header.show {
+  transform: translateY(0);
+}
+
+.sticky-header.hide {
+  transform: translateY(-100%);
 }

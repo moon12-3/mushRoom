@@ -4,9 +4,22 @@ import logo2 from "../img/logo2.png";
 import { useEffect, useState } from "react";
 
 function Header() {
-
+    const [showHeader, setShowHeader] = useState(true);
+    const [prevScrollPos, setPrevScrollPos] = useState(0);
     const [showBackground, setShowBackground] = useState(true);
     const location = useLocation();
+
+    useEffect(() => {
+        const handleScroll = () => {
+          const currentScrollPos = window.pageYOffset;
+    
+          setShowHeader(prevScrollPos > currentScrollPos || currentScrollPos <= 0);
+          setPrevScrollPos(currentScrollPos);
+        };
+    
+        window.addEventListener('scroll', handleScroll);
+        return () => window.removeEventListener('scroll', handleScroll);
+      }, [prevScrollPos]);
 
     useEffect(()=> {
         if(location.pathname ==='/game') {
@@ -17,7 +30,7 @@ function Header() {
     }, [location.pathname]);
 
     return (
-        <header>
+        <header className={`sticky-header ${showHeader ? 'show' : 'hide'}`}>
             <div className={showBackground ? 'nav-bg' : 'nav'}>
                 <div className='in-nav'>
                     <div>
