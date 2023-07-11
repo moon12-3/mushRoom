@@ -37,7 +37,7 @@ function Header() {
                     <Link to='/'><img className = "logo" src={showBackground ? logo : logo2}/></Link>
                     </div>
                     <ul className="nav-list">
-                        <li><Link to='/mushRoom'>소개</Link></li>
+                        <li><Link to='/main'>소개</Link></li>
                         <li><Link to='/game'>게임</Link></li>
                         <li><Link to='/thesis'>기록</Link></li>
                     </ul>
