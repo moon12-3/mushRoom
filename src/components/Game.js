@@ -271,7 +271,7 @@ function Card(props) {
             <div className = {'container card2'}>
                 <div className = {`card ${rot2?'':'rot'}`} onClick={()=>setRot2(!rot2)}>
                 <img src={require(`./card/right/${cards[cnt]}.png`).default} className='front'/>
-                <img src={require(`./card/right/${cards[cnt]}_back.png`.default)} className='back'/>
+                <img src={require(`./card/right/${cards[cnt]}_back.png`).default} className='back'/>
                 </div>
             </div>
             <img src={wArrow} className={styles.rightArr} onClick={goRight}/>
