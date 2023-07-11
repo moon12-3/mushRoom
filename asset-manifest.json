@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/mushRoom/static/css/main.08e0c6bd.css",
-    "main.js": "/mushRoom/static/js/main.565564ce.js",
+    "main.js": "/mushRoom/static/js/main.ad91cf82.js",
     "static/js/787.ba5d1840.chunk.js": "/mushRoom/static/js/787.ba5d1840.chunk.js",
     "static/media/first-bg.png": "/mushRoom/static/media/first-bg.dd3205129d99191792a7.png",
     "static/media/gameBg.png": "/mushRoom/static/media/gameBg.0deebbbc83a643941d2b.png",
@@ -44,11 +44,11 @@
     "static/media/community.png": "/mushRoom/static/media/community.061662c36ce27004d22a.png",
     "index.html": "/mushRoom/index.html",
     "main.08e0c6bd.css.map": "/mushRoom/static/css/main.08e0c6bd.css.map",
-    "main.565564ce.js.map": "/mushRoom/static/js/main.565564ce.js.map",
+    "main.ad91cf82.js.map": "/mushRoom/static/js/main.ad91cf82.js.map",
     "787.ba5d1840.chunk.js.map": "/mushRoom/static/js/787.ba5d1840.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.08e0c6bd.css",
-    "static/js/main.565564ce.js"
+    "static/js/main.ad91cf82.js"
   ]
 }
