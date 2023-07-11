@@ -43,7 +43,7 @@ function Thesis() {
                     <Link to={`/indi/식수`}><img src={arrbtn} className={styles.arrBtn} id={styles.arrBtn}/></Link>
                     <div className={styles.theText} id={styles.theText}>
                         <div>식수</div>
-                        제목과 정확한 논제를?
+                        생수와 수돗물의 상관관계?
                     </div>
                 </div>
 
@@ -99,7 +99,7 @@ function Thesis() {
                     <Link to={`/indi/공동체`}><img src={arrbtn} className={styles.arrBtn} id={styles.arrBtn7}/></Link>
                     <div className={styles.theText} id={styles.theText6}>
                         <div>공동체</div>
-                        제목과 정확한 논제를?
+                        우리는 누구와 함께 할지<br/>선택할 수 있나?
                     </div>
                 </div>
              </div>   
