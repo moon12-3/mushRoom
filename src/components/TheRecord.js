@@ -36,7 +36,8 @@ function Para(props) {
 
     return(
         <div id={styles.pContent}>
-            <img src={require(`./thesis/${props.img}.png`)} id={styles.pImg}/>
+            {/* <img src={require(`./thesis/${props.img}.png`)} id={styles.pImg}/> */}
+            <img src={process.env.PUBLIC_URL + `/thesis/${props.img}.png`} id={styles.pImg}/>
             <div id={styles.pTitle}>{props.sub}</div>
             <div id={styles.pText}>
                 {props.text}<br/><br/>
