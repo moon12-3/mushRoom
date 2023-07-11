@@ -260,8 +260,8 @@ function Card(props) {
             <img src={process.env.PUBLIC_URL + `/card/right/${cards[cnt2]}.png`} className={`r ${size2?'sm':'big'}`}/>
             <div className = {'container card1'}>
                 <div className = {`card ${rot?'':'rot'}`} onClick={()=>setRot(!rot)}>
-                <img src={process.env.PUBLIC_URL + `/card/left/${cards[cnt2]}.png`} className='front'/>
-                <img src={process.env.PUBLIC_URL + `/card/left/${cards[cnt2]}_back.png`} className='back'/>
+                <img src={process.env.PUBLIC_URL + `/card/left/${cards[cnt]}.png`} className='front'/>
+                <img src={process.env.PUBLIC_URL + `/card/left/${cards[cnt]}_back.png`} className='back'/>
                 </div>
             </div>
             <div>
@@ -270,8 +270,8 @@ function Card(props) {
             </div>
             <div className = {'container card2'}>
                 <div className = {`card ${rot2?'':'rot'}`} onClick={()=>setRot2(!rot2)}>
-                <img src={process.env.PUBLIC_URL + `/card/right/${cards[cnt2]}.png`} className='front'/>
-                <img src={process.env.PUBLIC_URL + `/card/right/${cards[cnt2]}_back.png`} className='back'/>
+                <img src={process.env.PUBLIC_URL + `/card/right/${cards[cnt]}.png`} className='front'/>
+                <img src={process.env.PUBLIC_URL + `/card/right/${cards[cnt]}_back.png`} className='back'/>
                 </div>
             </div>
             <img src={wArrow} className={styles.rightArr} onClick={goRight}/>
