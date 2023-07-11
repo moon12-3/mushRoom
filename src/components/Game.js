@@ -256,12 +256,12 @@ function Card(props) {
     return(
         <center><div id={styles.second} className={props.fadeState}>
             <img src={wArrow} className={styles.leftArr} onClick={goLeft}/>
-            <img src={require(`./card/left/${cards[cnt2]}.png`)} className={`l ${size1?'sm':'big'}`}/>
-            <img src={require(`./card/right/${cards[cnt2]}.png`)} className={`r ${size2?'sm':'big'}`}/>
+            <img src={require(`./card/left/${cards[cnt2]}.png`).default} className={`l ${size1?'sm':'big'}`}/>
+            <img src={require(`./card/right/${cards[cnt2]}.png`).default} className={`r ${size2?'sm':'big'}`}/>
             <div className = {'container card1'}>
                 <div className = {`card ${rot?'':'rot'}`} onClick={()=>setRot(!rot)}>
-                <img src={require(`./card/left/${cards[cnt]}.png`)} className='front'/>
-                <img src={require(`./card/left/${cards[cnt]}_back.png`)} className='back'/>
+                <img src={require(`./card/left/${cards[cnt]}.png`).default} className='front'/>
+                <img src={require(`./card/left/${cards[cnt]}_back.png`).default} className='back'/>
                 </div>
             </div>
             <div>
@@ -270,8 +270,8 @@ function Card(props) {
             </div>
             <div className = {'container card2'}>
                 <div className = {`card ${rot2?'':'rot'}`} onClick={()=>setRot2(!rot2)}>
-                <img src={require(`./card/right/${cards[cnt]}.png`)} className='front'/>
-                <img src={require(`./card/right/${cards[cnt]}_back.png`)} className='back'/>
+                <img src={require(`./card/right/${cards[cnt]}.png`).default} className='front'/>
+                <img src={require(`./card/right/${cards[cnt]}_back.png`.default)} className='back'/>
                 </div>
             </div>
             <img src={wArrow} className={styles.rightArr} onClick={goRight}/>
